@@ -45,14 +45,7 @@
     exitBtn && exitBtn.addEventListener('click', function () { exitFS(); });
 
     document.addEventListener('keydown', function (e) {
-        // key 'f' or 'F' to toggle fullscreen, Escape to exit
-        if (e.key === 'f' || e.key === 'F') {
-            // avoid triggering when typing in inputs
-            var tag = document.activeElement && document.activeElement.tagName;
-            if (tag === 'INPUT' || tag === 'TEXTAREA' || document.activeElement && document.activeElement.isContentEditable) return;
-            e.preventDefault();
-            if (isFull()) exitFS(); else requestFS();
-        }
+        // Escape to exit fullscreen
         if (e.key === 'Escape') {
             if (isFull()) exitFS();
         }
